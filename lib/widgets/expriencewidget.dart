@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_interface/main.dart';
 class ExperienceWidgets extends StatefulWidget {
   final String avatar1;
   final String avatar2;
@@ -100,7 +100,21 @@ class _ExperienceWidgetsState extends State<ExperienceWidgets> {
                           ),
                         ),
                       ),
-                      const Icon(Icons.more_horiz),
+                      
+                      GestureDetector(
+                    child: InkWell(
+                      splashColor: const Color.fromARGB(255, 37, 187, 172),  // Màu khi nhấn
+                        // Màu khi giữ nhấn
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => TourDetail()));
+                      },
+                      child: Icon(
+                        Icons.more_horiz,
+                        color: Colors.grey, // Màu mặc định của biểu tượng
+                        
+                      ),
+                    ),
+                  ),
                     ],
                   ),
                   const SizedBox(height: 8),

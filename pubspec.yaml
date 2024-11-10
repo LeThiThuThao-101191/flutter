@@ -107,6 +107,47 @@ flutter:
     - images/exprience/fod1.png
     - images/exprience/fod2.png
     - images/exprience/fod3.png
+     # Profile
+    - images/avatar.png
+    - images/cam.png
+    # My Chat
+    - images/chat/n1.png
+    - images/chat/n2.png
+    - images/chat/n3.png
+    - images/chat/n4.png
+    - images/chat/n5.png
+    - images/chat/Close.png
+    - images/chat/thanhngang.png
+    
+    # Nofitications
+    - images/notifi/n1.png
+    - images/notifi/TabBar.png
+    - images/notifi/v1.png
+    - images/notifi/v2.png
+    - images/notifi/v3.png
+    - images/notifi/money.png
+    - images/notifi/pen.png
+    - images/notifi/local.png
+    - images/notifi/danang.png
+    - images/notifi/t1.png
+  
+  # Trip Detail
+    - images/detail/avatar.png
+    - images/detail/danang.png
+  #Tour
+    - images/tour/ho.png
+    - images/tour/icontien.png
+    - images/tour/iconsach.png
+    - images/tour/icondaucham.png
+    - images/tour/icon.png
+
+  # List Tour
+    - images/listtour/danang.png
+    - images/listtour/halong.png
+    - images/listtour/Uc.png
+    - images/listtour/daucham.png
+    - images/listtour/thanhngang.png
+    - images/listtour/footer.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

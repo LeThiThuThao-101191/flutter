@@ -1,137 +1,87 @@
 import 'package:flutter/material.dart';
 
 class Tourwidget extends StatefulWidget {
-  final String cityName;
-  final String days;
-  final String price;
-  final String avatar;
-  final String date; // Thêm thuộc tính date
+  final String time;
+  final String title;
+   final String title2;
+  final String title3;
+  final String title4;
+  final String title5;
   const Tourwidget({
     Key?
-  key,
-  required this.cityName,
-    required this.days,
-    required this.price,
-    required this.avatar,
-    required this.date, // Thêm vào constructor
-  }):super(key: key);
+    key,
+      required this.time,
+      required this.title,
+      required this.title2,
+      required this.title3,
+      required this.title4,
+      required this.title5,
+      
+    }):super(key: key);
 
   @override
   State<Tourwidget> createState() => _TourwidgetState();
 }
 
 class _TourwidgetState extends State<Tourwidget> {
-  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: MediaQuery.of(context).size.width*0.9,
-
-      child: Card(
+    return Column(
+       crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+      Container(
+         padding: EdgeInsets.only(left: 10.0, right: 10,),
         child: Column(
           
           children: [
-            Stack(
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(widget.avatar, width: double.infinity,height: 200,fit:BoxFit.cover,),
-                Positioned(child: Row(
+                Row(
                   children: [
-                    Icon(
-                      Icons.star, 
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Text(
-                      "142 likes",
-                      style: TextStyle(
-                        color: Colors.white
-                      ),
-                    )
+                    Image.asset("images/tour/icondaucham.png",
+                    color: const Color.fromARGB(255, 73, 231, 215),),
+                    SizedBox(width: 20,),
+                    Text(widget.time, style: TextStyle(
+                      color: const Color.fromARGB(255, 73, 231, 215)
+                      ,fontSize: 20,
+                    ),)
                   ],
-                ),
-                left: 10,
-                bottom: 10,
-                ),
+                ),SizedBox(height: 5,),
+                Text(widget.title, style: TextStyle(
+                  color: Colors.black.withOpacity(0.6),
+                  fontSize: 20,
+                ),),
+                SizedBox(height: 5,),
+                Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   
+                  children: [
+                 Text(widget.title2, style: TextStyle(
+                  color: Colors.black.withOpacity(0.6), 
+                  fontSize: 20,
+                 ),),
+                 SizedBox(height: 5,),
+                 Text(widget.title3, style: TextStyle(
+                  color: Colors.black.withOpacity(0.6),fontSize: 20,
+                 ),),
+                 SizedBox(height: 5,),
+                 Text(widget.title4, style: TextStyle(
+                  color: Colors.black.withOpacity(0.6),fontSize: 20,
+                 ),),
+                 SizedBox(height: 5,),
+                 Text(widget.title5, style: TextStyle(
+                  color: Colors.black.withOpacity(0.6),fontSize: 20,
+                 ),),
+              ],
+            )
               ],
             ),
-            Padding(
-              
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-             
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    widget.cityName,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color:Colors.black.withOpacity(0.6)
-
-                    ),
-                  ),
-                  InkWell(
-                    onTap: ()
-                    {
-                      setState(() {
-                        isFavorite = !isFavorite;
-                      });
-                    },
-                    child: isFavorite == false
-                      ?Icon(Icons.favorite_border_outlined):
-                      Icon(
-                        Icons.favorite,
-                        color: Colors.red,
-                      ),
-                  )
-                ],
-              ),
-            ), 
-            Padding(
-              padding: EdgeInsets.only(top: 10, left: 20, right: 20),
-              child: Row(
-                children: [
-                  Icon(Icons.date_range),
-                  Text("Jan 30, 2020", style: TextStyle(color:Colors.black.withOpacity(0.5),),),
-                ],
-              ),
-            ),
-            Container(
-              padding:
-                  EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Icon(Icons.lock_clock),
-                      Text(widget.days, style: TextStyle(color: Colors.black.withOpacity(0.5),),),
-                    ],
-                  ),
-                  Text(widget.price, style: TextStyle(color:const Color.fromARGB(255, 110, 216, 205)),),
-                ],
-              ),
-            )
-
+        
           ],
         ),
       ),
-      ),
+      ],
     );
   }
 }
